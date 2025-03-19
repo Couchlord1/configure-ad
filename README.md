@@ -59,9 +59,11 @@ Go through the installation wizard, after installation the virtual machine will 
 <h3>Step 3:</h3>
 
 Now from Client-1, joing the computer to the newly created domain. *settings* >> *system* >> *about* >> *Rename this PC(advanced)* In the *computer Name* tab click *Change* then select "member of: Domain":
+
 ![Capture3](https://github.com/user-attachments/assets/a0fdca13-87e2-4962-aaf7-6cb362f629a1)
 
 Using the same credentials as before "mydomain.com\labuser" you should be able to join the computer to the domain, at which point the computer will need to restart and end the remote desktop session. You can esnure the computer was added to the domain by logging in to DC-1 >> *Active Directory Users and Computers* >> *Computers* and checking if Client-1 has been added.:
+
 ![Capture4](https://github.com/user-attachments/assets/d9ba6263-62ab-4a7e-af01-0c1c41119c48)
 
 The domain is now set up.
@@ -69,9 +71,11 @@ The domain is now set up.
 <h3>Step 4:</h3>
 
 To explore further concepts and additional features, lets edit the group policy for this domain. From DC-1: *Group Policy Management* >> *Forest:mydomain.com* >> *Default Domain Policy* >> *Right click: Edit* >> From *Group Policy Management Policy Editor* >> *Computer Configuration* >> * Policies* >> *Windows Settings* >> *Security Settings* >> *Account Lockout Policy* >> Edit *Account lockout duration* for 30 minutes. Also edit *Allow Administrator account lockout*. This should set up the domain with a lockout feature after multple failed login attempts.
+
 ![Capture5](https://github.com/user-attachments/assets/5d081619-0f9f-4ca5-88f4-62a16d24c509)
 
 Test this new feature by creating a new user from DC-1: *Active Directory Users and Computers* >> *Users* >> *Right Click* >> *New* >> *Users*r. Lock out this user from logging in by attempting to log in to Cleint-1 and incorrectly entering the password 5 times. Try to use the real password to log in on the 6th attempt to receive a warning window. Go back to DC-1, you should be able to see the created user's locked account in the *Active directory Users and Computers*.
+
 ![image](https://github.com/user-attachments/assets/917f10a0-f2b6-40d9-8f0e-07d90b24cb49)
 
 You have now set up an Active Directory and set up a security feature using group policy, just one of the many features of Active Directory.
