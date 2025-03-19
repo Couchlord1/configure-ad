@@ -3,7 +3,7 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-In this project I demonstrate understanding of Window's Active Directory using Azure Virtual Machines to set up an active directory domain as shown in the following concept:
+In this project I demonstrate an understanding of Window's Active Directory by using Azure Virtual Machines to set up an active directory domain as shown in the following concept:
 
 <br><img src="https://github.com/user-attachments/assets/88acad7c-617b-49d0-a990-088f1fd6385d"/><br />
 
@@ -12,7 +12,7 @@ In this project I demonstrate understanding of Window's Active Directory using A
 - Microsoft Azure (Virtual Machines)
 - Remote Desktop
 - Active Directory Domain Services
-- PowerShell
+- PowerShell/Cmd
 
 <h2>Operating Systems Used </h2>
 
@@ -68,13 +68,11 @@ The domain is now set up.
 
 <h3>Step 4:</h3>
 
-To familiarize yourself with additional features, lets edit the group policy for this domain. From DC-1: *Group Policy Management* >> *Forest:mydomain.com* >> *Default Domain Policy* >> *Right click: Edit* >> From *Group Policy Management Policy Editor* >> *Computer Configuration* >> * Policies* >> *Windows Settings* >> *Security Settings* >> *Account Lockout Policy* >> Edit *Account lockout duration* for 30 minutes. Also edit *Allow Administrator account lockout*. You have now added a lockout feature.
+To explore further concepts and additional features, lets edit the group policy for this domain. From DC-1: *Group Policy Management* >> *Forest:mydomain.com* >> *Default Domain Policy* >> *Right click: Edit* >> From *Group Policy Management Policy Editor* >> *Computer Configuration* >> * Policies* >> *Windows Settings* >> *Security Settings* >> *Account Lockout Policy* >> Edit *Account lockout duration* for 30 minutes. Also edit *Allow Administrator account lockout*. This should set up the domain with a lockout feature after multple failed login attempts.
 ![Capture5](https://github.com/user-attachments/assets/5d081619-0f9f-4ca5-88f4-62a16d24c509)
 
 Test this new feature by creating a new user from DC-1: *Active Directory Users and Computers* >> *Users* >> *Right Click* >> *New* >> *Users*r. Lock out this user from logging in by attempting to log in to Cleint-1 and incorrectly entering the password 5 times. Try to use the real password to log in on the 6th attempt to receive a warning window. Go back to DC-1, you should be able to see the created user's locked account in the *Active directory Users and Computers*.
 ![image](https://github.com/user-attachments/assets/917f10a0-f2b6-40d9-8f0e-07d90b24cb49)
 
-You can also optionally use event viewer to see the failed loggin attempts as "audit  faliures", and also see the unlocking the account event.
-
-You have now set up an Active Directory and set up a security feature using group policy.
+You have now set up an Active Directory and set up a security feature using group policy, just one of the many features of Active Directory.
 
